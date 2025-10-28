@@ -1,23 +1,16 @@
-// index.js
+
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-/*
-  Aplicação Node.js baseada no modelo request-response
-  Contém 3 rotas que retornam HTML:
-    → GET /        → página inicial
-    → GET /sobre   → informações sobre o projeto
-    → GET /contato → formulário de contato (simulado)
-*/
 
-// Middleware simples para log de requisições
+
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
   next();
 });
 
-// Rota 1 — Home
+
 app.get('/', (req, res) => {
   res.send(`
     <!doctype html>
@@ -32,7 +25,7 @@ app.get('/', (req, res) => {
       </style>
     </head>
     <body>
-      <h1>Bem-vindo ao servidor Node.js!</h1>
+      <h1>Bem-vindo ao servidor Node.js versão 2.0!</h1>
       <nav>
         <a href="/">Home</a>
         <a href="/sobre">Sobre</a>
@@ -46,7 +39,7 @@ app.get('/', (req, res) => {
   `);
 });
 
-// Rota 2 — Sobre
+
 app.get('/sobre', (req, res) => {
   res.send(`
     <!doctype html>
@@ -73,7 +66,7 @@ app.get('/sobre', (req, res) => {
   `);
 });
 
-// Rota 3 — Contato
+
 app.get('/contato', (req, res) => {
   res.send(`
     <!doctype html>
@@ -103,7 +96,7 @@ app.get('/contato', (req, res) => {
   `);
 });
 
-// Rota 404 — Padrão
+
 app.use((req, res) => {
   res.status(404).send(`
     <!doctype html>
@@ -118,7 +111,7 @@ app.use((req, res) => {
   `);
 });
 
-// Inicia o servidor
+
 app.listen(port, () => {
   console.log(`✅ Servidor rodando em http://localhost:${port}`);
 });
