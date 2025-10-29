@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
       </style>
     </head>
     <body>
-      <h1>Bem-vindo ao servidor Node.js versão 2.0!</h1>
+      <h1>Bem-vindo ao servidor Node.js versão 3.0!</h1>
       <nav>
         <a href="/">Home</a>
         <a href="/sobre">Sobre</a>
